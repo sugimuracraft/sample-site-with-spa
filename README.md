@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Description
+
+## Installed Packages
+
+* [RxJS](https://rxjs.dev/) for API access.
+
+# Auto Generated Documents
 ## Available Scripts
 
 In the project directory, you can run:

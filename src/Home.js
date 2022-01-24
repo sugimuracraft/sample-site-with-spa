@@ -13,8 +13,8 @@ class Home extends React.Component {
           This is first section's description. This is first section's description. This is first section's description.
         </p>
 
-        <div class="row">
-          <div class="col-sm">
+        <div className="row">
+          <div className="col-sm">
             <p>
               <Link to="/contents/1-1">Page 1-1</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>
@@ -22,7 +22,7 @@ class Home extends React.Component {
               One of three columns.One of three columns.One of three columns.One of three columns.
             </p>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <p>
             <Link to="/contents/1-2">Page 1-2</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>
@@ -30,7 +30,7 @@ class Home extends React.Component {
               One of three columns.One of three columns.One of three columns.One of three columns.
             </p>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <p>
             <Link to="/contents/1-3">Page 1-3</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>
@@ -48,8 +48,8 @@ class Home extends React.Component {
           This is first section's description. This is first section's description. This is first section's description.
         </p>
 
-        <div class="row">
-          <div class="col-sm">
+        <div className="row">
+          <div className="col-sm">
             <p>
               <Link to="/contents/2-1">Page 2-1</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>
@@ -57,7 +57,7 @@ class Home extends React.Component {
               One of three columns.One of three columns.One of three columns.One of three columns.
             </p>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <p>
               <Link to="/contents/2-2">Page 2-2</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>
@@ -65,7 +65,7 @@ class Home extends React.Component {
               One of three columns.One of three columns.One of three columns.One of three columns.
             </p>
           </div>
-          <div class="col-sm">
+          <div className="col-sm">
             <p>
             <Link to="/contents/2-3">Page 2-3</Link><br/>
               One of three columns.One of three columns.One of three columns.One of three columns.One of three columns.<br/>

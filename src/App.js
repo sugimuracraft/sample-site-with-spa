@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './About';
 import './App.css';
 import Home from './Home';
@@ -14,16 +14,16 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div>
-          <Route exact path='/' component={Home}/>
-          <Route path='/contents/1-1' component={Page1In1}/>
-          <Route path='/contents/1-2' component={Page2In1}/>
-          <Route path='/contents/1-3' component={Page3In1}/>
-          <Route path='/contents/2-1' component={Page1In2}/>
-          <Route path='/contents/2-2' component={Page2In2}/>
-          <Route path='/contents/2-3' component={Page3In2}/>
-          <Route path='/contents/about' component={About}/>
-        </div>
+        <Routes>
+          <Route exact path='/' element={<Home />}/>
+          <Route path='/contents/1-1' element={<Page1In1 />}/>
+          <Route path='/contents/1-2' element={<Page2In1 />}/>
+          <Route path='/contents/1-3' element={<Page3In1 />}/>
+          <Route path='/contents/2-1' element={<Page1In2 />}/>
+          <Route path='/contents/2-2' element={<Page2In2 />}/>
+          <Route path='/contents/2-3' element={<Page3In2 />}/>
+          <Route path='/contents/about' element={<About />}/>
+        </Routes>
       </Router>
     </div>
   );
