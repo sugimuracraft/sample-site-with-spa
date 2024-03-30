@@ -1,4 +1,24 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Setup Development Environment
+
+## Run Docker Container for Front App.
+
+Create and Run container.
+```bash
+docker compose up -d
+```
+
+Enter container.
+```bash
+docker compose exec front bash
+```
+
+Start app
+```bash
+npm start
+```
+
+You can access `http://localhost:1300/` on host pc.
 
 # Description
 

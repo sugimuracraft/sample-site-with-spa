@@ -1,6 +1,6 @@
 // Configure Credentials to use Cognito
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'ap-northeast-1:3f9d8f01-79fc-4a16-a3af-fb6a6852c32d'  // TODO: replace for dev/prod.
+    IdentityPoolId: 'ap-northeast-1:uuid-for-cognito'  // TODO: replace for dev/prod.
 });
 
 AWS.config.region = 'ap-northeast-1';
