@@ -14,43 +14,39 @@ AWS.config.credentials.get(function(err) {
         return;
     }
     // create Amazon Kinesis service object
-    var kinesis = new AWS.Kinesis({
+    const kinesis = new AWS.Kinesis({
         apiVersion: '2013-12-02'
     });
 
-    var datestring = (date)=> {
-        return 
-    }
-
     // Get the ID of the Web page element.
-    var doc = document.documentElement || document.body;
+    const doc = document.documentElement || document.body;
 
     // Get Scrollable height
-    var scrollableHeight = doc.clientHeight;
+    const scrollableHeight = doc.clientHeight;
 
-    var recordData = [];
-    var TID = null;
-    window.addEventListener('scroll', function(event) {
+    const recordData = [];
+    let TID = null;
+    window.addEventListener('scroll', function(_) {
         clearTimeout(TID);
         // Prevent creating a record while a user is actively scrolling
         TID = setTimeout(function() {
             // calculate percentage
-            var scrollableElement = doc;
-            var scrollHeight = scrollableElement.scrollHeight;  // body full height.
-            var scrollTop = scrollableElement.scrollTop;  // current scroll position from top.
+            const scrollableElement = doc;
+            const scrollHeight = scrollableElement.scrollHeight;  // body full height.
+            const scrollTop = scrollableElement.scrollTop;  // current scroll position from top.
 
-            var scrollTopPercentage = Math.round((scrollTop / scrollHeight) * 100);
-            var scrollBottomPercentage = Math.round(((scrollTop + scrollableHeight) / scrollHeight) * 100);
+            const scrollTopPercentage = Math.round((scrollTop / scrollHeight) * 100);
+            const scrollBottomPercentage = Math.round(((scrollTop + scrollableHeight) / scrollHeight) * 100);
 
             // Create the Amazon Kinesis record
-            var date = new Date();
-            date = date.toISOString().replace('T', ' ').slice(0, 19)  // convert to "yyyy-mm-dd HH:MM:SS" format. 
-            var record = {
+            const date = new Date();
+            const formatted_date = date.toISOString().replace('T', ' ').slice(0, 19)  // convert to "yyyy-mm-dd HH:MM:SS" format. 
+            const record = {
                 Data: JSON.stringify({
                     uri: window.location.href,
                     scrollTopPercentage: scrollTopPercentage,
                     scrollBottomPercentage: scrollBottomPercentage,
-                    datetime: date
+                    datetime: formatted_date
                 }),
                 PartitionKey: 'partition-' + AWS.config.credentials.identityId
             };
@@ -73,6 +69,6 @@ AWS.config.credentials.get(function(err) {
             }
         });
         // clear record data
-        recordData = [];
+        recordData.length = 0;
     }, 1000);
 });
