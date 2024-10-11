@@ -18,7 +18,7 @@ Start app
 npm start
 ```
 
-You can access `http://localhost:1300/` on host pc.
+You can access `http://localhost:13000/` on host pc.
 
 # Description
 
