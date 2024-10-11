@@ -69,6 +69,6 @@ AWS.config.credentials.get(function(err) {
             }
         });
         // clear record data
-        recordData = [];
+        recordData.length = 0;
     }, 1000);
 });
