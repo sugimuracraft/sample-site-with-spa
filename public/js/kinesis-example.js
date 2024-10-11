@@ -40,13 +40,13 @@ AWS.config.credentials.get(function(err) {
 
             // Create the Amazon Kinesis record
             const date = new Date();
-            date = date.toISOString().replace('T', ' ').slice(0, 19)  // convert to "yyyy-mm-dd HH:MM:SS" format. 
+            const formatted_date = date.toISOString().replace('T', ' ').slice(0, 19)  // convert to "yyyy-mm-dd HH:MM:SS" format. 
             const record = {
                 Data: JSON.stringify({
                     uri: window.location.href,
                     scrollTopPercentage: scrollTopPercentage,
                     scrollBottomPercentage: scrollBottomPercentage,
-                    datetime: date
+                    datetime: formatted_date
                 }),
                 PartitionKey: 'partition-' + AWS.config.credentials.identityId
             };
